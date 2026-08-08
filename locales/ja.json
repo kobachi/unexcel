@@ -1,0 +1,17 @@
+{
+  "usageTsv": "使い方 (TSV): unexcel [-outdir=DIR] [-raw] [-noheader] <file.xlsx|->",
+  "usageJson": "使い方 (JSON): unexcel -json[=FILE] [-pretty] <file.xlsx|->",
+  "flagOutdirUsage": "指定されたDIRにシートごとのTSVファイルを保存する。",
+  "flagRawUsage": "数式セルを計算せず数式文字列(先頭は=で始まる)で出力する。",
+  "flagNoHeaderUsage": "ヘッダ行と行番号列を出力しない",
+  "flagJSONUsage": "TSVの代わりにJSON形式で出力する。FILEを省略すると標準出力へ、FILEを指定するとそのファイルへ書き出す",
+  "flagPrettyUsage": "-json指定時、整形済みJSONを出力する。",
+  "errorLabel": "エラー",
+  "errOutdirNeedsDir": "-outdir には出力先ディレクトリを -outdir=DIR の形式で指定してください",
+  "errOpenWorkbook": "指定されたExcelブックを開けませんでした: {{.Err}}",
+  "errNoSheets": "シートが見つかりません",
+  "errConvertSheet": "シート \"{{.Sheet}}\" の変換に失敗しました: {{.Err}}",
+  "errMkdirOutdir": "出力先ディレクトリを作成できませんでした: {{.Err}}",
+  "errCreateJSONFile": "JSON出力ファイルを作成できませんでした: {{.Err}}",
+  "sheetConverted": "{{.Sheet}} -> {{.Path}}"
+}

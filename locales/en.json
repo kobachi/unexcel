@@ -1,0 +1,17 @@
+{
+  "usageTsv": "Usage (TSV): unexcel [-outdir=DIR] [-raw] [-noheader] <file.xlsx|->",
+  "usageJson": "Usage (JSON): unexcel -json[=FILE] [-pretty] <file.xlsx|->",
+  "flagOutdirUsage": "Save one TSV file per sheet into the specified DIR.",
+  "flagRawUsage": "Output formula cells as formula strings (starting with =) instead of evaluating them.",
+  "flagNoHeaderUsage": "Do not output the header row and row number column",
+  "flagJSONUsage": "Output in JSON format instead of TSV. If FILE is omitted, output goes to stdout; if FILE is specified, output is written to that file",
+  "flagPrettyUsage": "When -json is specified, output pretty-printed JSON.",
+  "errorLabel": "Error",
+  "errOutdirNeedsDir": "-outdir requires an output directory in the form -outdir=DIR",
+  "errOpenWorkbook": "Failed to open the specified Excel workbook: {{.Err}}",
+  "errNoSheets": "No sheets found",
+  "errConvertSheet": "Failed to convert sheet \"{{.Sheet}}\": {{.Err}}",
+  "errMkdirOutdir": "Failed to create the output directory: {{.Err}}",
+  "errCreateJSONFile": "Failed to create the JSON output file: {{.Err}}",
+  "sheetConverted": "{{.Sheet}} -> {{.Path}}"
+}
