@@ -11,7 +11,7 @@ replace golang.org/x/text => github.com/golang/text v0.19.0
 require github.com/xuri/excelize/v2 v2.11.0
 
 require (
-	github.com/nicksnyder/go-i18n/v2 v2.4.0
+	github.com/nicksnyder/go-i18n/v2 v2.6.1
 	golang.org/x/text v0.38.0
 )
 
