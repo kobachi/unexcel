@@ -1,0 +1,42 @@
+name: Build Artifacts
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: 'go.mod'
+
+      - name: Build binaries
+        run: make all
+
+      - name: Package files
+        run: |
+          TAG_NAME=${GITHUB_REF_NAME}
+          
+          for dir in bin/*; do
+            if [ -d "$dir" ]; then
+              ARCH=$(basename "$dir")
+              ZIP_NAME="unexcel-${TAG_NAME}_${ARCH}.zip"
+              TMP_DIR=$(mktemp -d)
+              cp "$dir"/* "$TMP_DIR/"
+              cp README.md README.*.md LICENSE "$TMP_DIR/"
+              (cd "$TMP_DIR" && zip -r "${GITHUB_WORKSPACE}/${ZIP_NAME}" .)
+            fi
+          done
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: unexcel-packages
+          path: unexcel-*.zip
